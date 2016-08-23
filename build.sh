@@ -11,9 +11,9 @@ COMPILER="g++"
 BIN_DIR="./bin"
 SRC_DIR="./src"
 
-INCFLAGS="-I../Engine/src/inc"
+INCFLAGS="-I../engine/src/inc"
 
-LINKFLAGS="-L../Engine/bin -lengine"
+LINKFLAGS="-L../engine/bin -lengine"
 
 CFLAGS_DEFAULT="-std=c++11 $INCFLAGS"
 
