@@ -15,7 +15,7 @@ INCFLAGS="-I../engine/src/inc"
 
 LINKFLAGS="-L../engine/bin -lengine"
 
-CFLAGS_DEFAULT="-std=c++11 $INCFLAGS"
+CFLAGS_DEFAULT="-std=c++14 $INCFLAGS"
 
 # Debug
 CFLAGS="$CFLAGS_DEFAULT -g -O0"

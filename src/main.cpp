@@ -23,5 +23,8 @@ int main(int argc, char** args)
 	// Trigger the game run
 	game->Run();
 
+	// Cleanup
+	game->Cleanup();
+
 	return 0;
 }
