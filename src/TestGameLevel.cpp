@@ -8,8 +8,8 @@ TestGameLevel::TestGameLevel()
 void TestGameLevel::Init()
 {
 	// Presets
-	PlayerPreset playerPreset;
+	LinePreset linePreset;
 
 	// Add object using preset
-	m_GameObjects.push_back(playerPreset.CreateNew());
+	m_GameObjects.push_back(linePreset.CreateNew());
 }

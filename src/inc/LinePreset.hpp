@@ -4,9 +4,9 @@
 #include "ObjectPreset.hpp"
 #include "component/Transform.hpp"
 
-#include "component/PlayerController.hpp"
+#include "component/LineDrawController.hpp"
 
-class PlayerPreset : public ObjectPreset
+class LinePreset : public ObjectPreset
 {
 	public:
 		GameObject* CreateNew()
@@ -15,9 +15,9 @@ class PlayerPreset : public ObjectPreset
 			GameObject* object = new GameObject();
 
 			// Apply our modifications & components
-			object->SetName("Player");
+			object->SetName("Line");
 			(object->Components())->Add<Transform>();
-			(object->Components())->Add<PlayerController>();
+			(object->Components())->Add<LineDrawController>();
 
 			// Return the outfitted GameObject
 			return object;
