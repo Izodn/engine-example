@@ -34,11 +34,11 @@ do_compile()
 do_link()
 {
 	echo "Linking..."
-	$COMPILER -o "./bin/$APP_NAME" $(echo
+	$COMPILER $(echo
 		for cur in ${FILES[@]}; do
 			echo "$BIN_DIR/$(echo ${cur} | sed -e "s/\//\./g").o"
 		done
-	) $LINKFLAGS
+	) $LINKFLAGS -o "./bin/$APP_NAME"
 }
 
 main()
