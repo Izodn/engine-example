@@ -13,10 +13,9 @@ int main(int argc, char** args)
 	// Set the logic tick rate
 	game.UpdateTickRate(300);
 
-	// Instantiate the window and attach to game
-	Window window(800, 600, "Engine Test");
-
-	game.AttachWindow(&window);
+	// Change the resolution & change the window title
+	game.GetWindow()->SetResolution(800, 600);
+	game.GetWindow()->SetTitle("One Month - 201609");
 
 	// Instantiate the level
 	TestGameLevel level;
