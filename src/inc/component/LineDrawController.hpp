@@ -17,18 +17,19 @@ class LineDrawController : public Component
 		void Update()
 		{
 			// If Mouse 1 was pressed since the last update
-			if (Input()->Pressed(Input()->GetKeyCode("Mouse 1"))) {
+			if (Input::Pressed(Input::Key::MOUSE_ONE)) {
+				std::cout << "Pressed mouse one" << std::endl;
 				m_TrackMovement = true;
 			}
 
 			// If we're tracking the mouse movement
 			if (m_TrackMovement) {
-				double deltaVert = Input()->GetAxis("Vertical");
-				double deltaHoriz = Input()->GetAxis("Horizontal");
+				double deltaVert = Input::GetAxis(Input::Axis::VERTICAL);
+				double deltaHoriz = Input::GetAxis(Input::Axis::HORIZONTAL);
 			}
 
 			// If Mouse 1 was released since the last update
-			if (Input()->Released(Input()->GetKeyCode("Mouse 1"))) {
+			if (Input::Released(Input::Key::MOUSE_ONE)) {
 				m_TrackMovement = false;
 			}
 		};
