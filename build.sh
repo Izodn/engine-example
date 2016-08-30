@@ -11,9 +11,13 @@ COMPILER="g++"
 BIN_DIR="./bin"
 SRC_DIR="./src"
 
+# Linux
 INCFLAGS="-I../engine/src/inc"
-
 LINKFLAGS="-L../engine/bin -lengine"
+
+# Windows
+#INCFLAGS="-I../libraries -I../engine/src/inc"
+#LINKFLAGS="-L../engine/bin -Wl,-Bdynamic -lengine -Wl,--as-needed"
 
 CFLAGS_DEFAULT="-std=c++14 $INCFLAGS"
 
