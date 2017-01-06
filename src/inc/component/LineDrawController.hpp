@@ -17,8 +17,8 @@ class LineDrawController : public Component
 		void Update()
 		{
 			// If Mouse 1 was pressed since the last update
-			if (Input::Pressed(Input::Key::MOUSE_ONE)) {
-				std::cout << "Pressed mouse one" << std::endl;
+			if (Input::Pressed(Input::Key::KEY_LALT)) {
+				std::cout << "Start tracking objects" << std::endl;
 				m_TrackMovement = true;
 			}
 
@@ -29,7 +29,8 @@ class LineDrawController : public Component
 			}
 
 			// If Mouse 1 was released since the last update
-			if (Input::Released(Input::Key::MOUSE_ONE)) {
+			if (Input::Released(Input::Key::KEY_LALT)) {
+				std::cout << "Stop tracking objects" << std::endl;
 				m_TrackMovement = false;
 			}
 		};

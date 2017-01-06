@@ -18,16 +18,13 @@ int main(int argc, char** args)
 	game.GetWindow()->SetTitle("One Month - 201609");
 
 	// Instantiate the level
-	TestGameLevel level;
+	TestGameLevel* level = new TestGameLevel();
 
 	// Set the game to the level
-	game.ChangeToLevel(&level);
+	game.ChangeToLevel(level);
 
 	// Trigger the game run
 	game.Run();
-
-	// Cleanup
-	game.Cleanup();
 
 	return 0;
 }

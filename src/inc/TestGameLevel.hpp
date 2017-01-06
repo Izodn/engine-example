@@ -4,6 +4,7 @@
 #include "GameObject.hpp"
 
 #include "LinePreset.hpp"
+#include "EventPreset.hpp"
 
 class TestGameLevel : public GameLevel
 {

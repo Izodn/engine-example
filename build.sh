@@ -42,7 +42,7 @@ do_link()
 		for cur in ${FILES[@]}; do
 			echo "$BIN_DIR/$(echo ${cur} | sed -e "s/\//\./g").o"
 		done
-	) $LINKFLAGS -o "./bin/$APP_NAME"
+	) $LINKFLAGS -o "./bin/$APP_NAME" -Wl,-rpath=./ -Wl,-rpath=./bin/ -Wl,-rpath=../engine/bin/ -Wl,-rpath=../../engine/bin/
 }
 
 main()
