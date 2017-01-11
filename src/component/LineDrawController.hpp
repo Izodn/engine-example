@@ -1,8 +1,7 @@
 #pragma once
 
-#include <iostream>
-
 #include "component/Component.hpp"
+#include "core/Logger.hpp"
 
 class LineDrawController : public Component
 {
@@ -18,7 +17,7 @@ class LineDrawController : public Component
 		{
 			// If Mouse 1 was pressed since the last update
 			if (Input::Pressed(Input::Key::KEY_LALT)) {
-				std::cout << "Start tracking objects" << std::endl;
+				Logger() << "Start tracking objects" << "\n";
 				m_TrackMovement = true;
 			}
 
@@ -30,7 +29,7 @@ class LineDrawController : public Component
 
 			// If Mouse 1 was released since the last update
 			if (Input::Released(Input::Key::KEY_LALT)) {
-				std::cout << "Stop tracking objects" << std::endl;
+				Logger() << "Stop tracking objects" << "\n";
 				m_TrackMovement = false;
 			}
 		};

@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Game.hpp"
 #include "graphics/Window.hpp"
 
