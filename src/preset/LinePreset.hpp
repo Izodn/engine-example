@@ -3,11 +3,10 @@
 #include "GameObject.hpp"
 #include "ObjectPreset.hpp"
 #include "component/Transform.hpp"
-#include "component/FillSquare.hpp"
 
-#include "component/CharacterController.hpp"
+#include "../component/LineDrawController.hpp"
 
-class CharacterPreset : public ObjectPreset
+class LinePreset : public ObjectPreset
 {
 	public:
 		GameObject* CreateNew()
@@ -16,10 +15,9 @@ class CharacterPreset : public ObjectPreset
 			GameObject* object = new GameObject();
 
 			// Apply our modifications & components
-			object->SetName("Character");
+			object->SetName("Line");
 			(object->Components())->Add<Transform>();
-			(object->Components())->Add<CharacterController>();
-			(object->RenderComponents())->Add<FillSquare>();
+			(object->Components())->Add<LineDrawController>();
 
 			// Return the outfitted GameObject
 			return object;

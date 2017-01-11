@@ -1,9 +1,4 @@
-#include "inc/TestGameLevel.hpp"
-
-TestGameLevel::TestGameLevel()
-{
-
-}
+#include "TestGameLevel.hpp"
 
 void TestGameLevel::Init()
 {

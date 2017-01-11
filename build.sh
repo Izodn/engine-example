@@ -4,7 +4,7 @@ set -e
 APP_NAME="Lines"
 FILES=(
 	"main.cpp"
-	"TestGameLevel.cpp"
+	"level/TestGameLevel.cpp"
 )
 
 COMPILER="g++"
@@ -12,7 +12,7 @@ BIN_DIR="./bin"
 SRC_DIR="./src"
 
 # Linux
-INCFLAGS="-I../engine/src/inc"
+INCFLAGS="-I../engine/src"
 LINKFLAGS="-L../engine/bin -lengine"
 
 # Windows

@@ -1,9 +1,9 @@
 #include <iostream>
 
 #include "Game.hpp"
-#include "Window.hpp"
+#include "graphics/Window.hpp"
 
-#include "inc/TestGameLevel.hpp"
+#include "level/TestGameLevel.hpp"
 
 int main(int argc, char** args)
 {
