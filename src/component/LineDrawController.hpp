@@ -13,7 +13,7 @@ class LineDrawController : public Component
 			m_TrackMovement = false;
 		};
 
-		void Update()
+		void Update(double deltaTime)
 		{
 			// If Mouse 1 was pressed since the last update
 			if (Input::Pressed(Input::Key::KEY_LALT)) {

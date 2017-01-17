@@ -2,7 +2,6 @@
 
 #include "GameObject.hpp"
 #include "ObjectPreset.hpp"
-#include "component/Transform.hpp"
 #include "component/FillSquare.hpp"
 
 #include "../component/CharacterController.hpp"
@@ -17,7 +16,6 @@ class CharacterPreset : public ObjectPreset
 
 			// Apply our modifications & components
 			object->SetName("Character");
-			(object->Components())->Add<Transform>();
 			(object->Components())->Add<CharacterController>();
 			(object->RenderComponents())->Add<FillSquare>();
 

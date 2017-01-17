@@ -1,4 +1,5 @@
 #include "TestGameLevel.hpp"
+#include "maths/Vector3.hpp"
 
 void TestGameLevel::Init()
 {

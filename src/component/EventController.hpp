@@ -10,7 +10,7 @@ class EventController : public Component
 
 		};
 
-		void Update()
+		void Update(double deltaTime)
 		{
 			// Upon releasing the escape button, stop the game.
 			if (Input::Released(Input::Key::KEY_ESCAPE)) {
