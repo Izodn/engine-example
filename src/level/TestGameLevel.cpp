@@ -4,11 +4,10 @@
 void TestGameLevel::Init()
 {
 	//Shaders
-	m_Game->RegisterShader<BasicOpenGLShader>();
+	m_Game->RegisterShader<TextureOpenGLShader>();
 
 	// Presets
 	EventPreset eventPreset;
-	LinePreset linePreset;
 	CharacterPreset characterPreset;
 
 	// Add object using preset
@@ -16,9 +15,8 @@ void TestGameLevel::Init()
 
 	// Add the player
 	GameObject* player = characterPreset.CreateNew();
-	player->RenderComponents()->Get<FillSquare>()->SetShader(
-		m_Game->GetWindow()->GetRenderer()->Shaders()->Get<BasicOpenGLShader>()
+	player->RenderComponents()->Get<TestGL>()->SetShader(
+		m_Game->GetWindow()->GetRenderer()->Shaders()->Get<TextureOpenGLShader>()
 	);
 	m_GameObjects.push_back(player);
-
 }

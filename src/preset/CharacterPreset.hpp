@@ -2,7 +2,7 @@
 
 #include "GameObject.hpp"
 #include "ObjectPreset.hpp"
-#include "component/FillSquare.hpp"
+#include "component/TestGL.hpp"
 
 #include "../component/CharacterController.hpp"
 
@@ -17,7 +17,14 @@ class CharacterPreset : public ObjectPreset
 			// Apply our modifications & components
 			object->SetName("Character");
 			(object->Components())->Add<CharacterController>();
-			(object->RenderComponents())->Add<FillSquare>();
+			(object->RenderComponents())->Add<TestGL>();
+
+			object->GetTransform()->SetRotation(
+				Quaternion::FromAxisAngle(
+					Vector3::Forward(),
+					0.0f
+				)
+			);
 
 			// Return the outfitted GameObject
 			return object;

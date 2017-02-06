@@ -2,9 +2,8 @@
 
 #include "GameLevel.hpp"
 #include "GameObject.hpp"
-#include "graphics/shader/opengl/BasicOpenGLShader.hpp"
+#include "graphics/shader/opengl/TextureOpenGLShader.hpp"
 
-#include "../preset/LinePreset.hpp"
 #include "../preset/EventPreset.hpp"
 #include "../preset/CharacterPreset.hpp"
 
