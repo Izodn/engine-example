@@ -3,6 +3,8 @@
 
 #include "level/TestGameLevel.hpp"
 
+#include "maths/Quaternion.hpp"
+
 int main(int argc, char** args)
 {
 	// Instantiate the game

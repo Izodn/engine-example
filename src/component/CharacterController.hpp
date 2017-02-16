@@ -5,10 +5,16 @@
 
 class CharacterController : public Component
 {
+	private:
+		int m_WindowWidth;
+		int m_WindowHeight;
+
 	public:
 		void Start()
 		{
-
+			Window* window =  m_GameObject->GetLevel()->GetGame()->GetWindow();
+			m_WindowWidth = window->GetWidth();
+			m_WindowHeight = window->GetHeight();
 		};
 
 		void Update(double deltaTime)
@@ -47,6 +53,19 @@ class CharacterController : public Component
 				if (Input::Pressed(Input::Key::KEY_A)) {
 					quat->Rotate(Vector3::Up(), deltaRad);
 				}
+			} else if (Input::Pressed(Input::Key::MOUSE_ONE)) {
+				Quaternion* quat = m_GameObject->GetTransform()->GetRotation();
+				double mouseX = Input::GetAxis(Input::Axis::HORIZONTAL);
+				double mouseY = Input::GetAxis(Input::Axis::VERTICAL);
+
+				double gridX = mouseX - (m_WindowWidth / 2);
+				double gridY = mouseY - (m_WindowHeight / 2);
+				Vector3 target = Vector3(-gridX, gridY, 100.0f);
+
+				*quat = Quaternion::LookAt(
+					*(m_GameObject->GetTransform()->GetPosition()),
+					target
+				);
 			}
 		};
 };
