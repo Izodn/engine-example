@@ -60,7 +60,7 @@ class CharacterController : public Component
 
 				double gridX = mouseX - (m_WindowWidth / 2);
 				double gridY = mouseY - (m_WindowHeight / 2);
-				Vector3 target = Vector3(-gridX, gridY, 100.0f);
+				Vector3 target = Vector3(gridX, -gridY, 100.0f);
 
 				*quat = Quaternion::LookAt(
 					*(m_GameObject->GetTransform()->GetPosition()),

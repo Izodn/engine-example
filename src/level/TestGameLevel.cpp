@@ -13,10 +13,20 @@ void TestGameLevel::Init()
 	// Add object using preset
 	m_GameObjects.push_back(eventPreset.CreateNew());
 
-	// Add the player
-	GameObject* player = characterPreset.CreateNew();
-	player->RenderComponents()->Get<TestGL>()->SetShader(
-		m_Game->GetWindow()->GetRenderer()->Shaders()->Get<TextureOpenGLShader>()
-	);
-	m_GameObjects.push_back(player);
+	double xPos = -6.0f;
+	double yPos = 6.0f;
+	for (uint16_t i = 0; i < 49; i++) {
+		if (xPos > 6.0f) {
+			yPos -= 2.0f;
+			xPos = -6.0f;
+		}
+
+		GameObject* obj = characterPreset.CreateNew();
+		obj->RenderComponents()->Get<TestGL>()->SetShader(
+			m_Game->GetWindow()->GetRenderer()->Shaders()->Get<TextureOpenGLShader>()
+		);
+		m_GameObjects.push_back(obj);
+		obj->GetTransform()->SetPosition(Vector3(xPos, yPos, -13.0f));
+		xPos += 2.0f;
+	}
 }
