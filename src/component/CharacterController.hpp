@@ -20,6 +20,32 @@ class CharacterController : public Component
 		void Update(double deltaTime)
 		{
 			if (
+				Input::Pressed(Input::Key::KEY_UP)
+				|| Input::Pressed(Input::Key::KEY_DOWN)
+				|| Input::Pressed(Input::Key::KEY_LEFT)
+				|| Input::Pressed(Input::Key::KEY_RIGHT)
+			) {
+				double deltaPos = 5.0f  * deltaTime;
+				Vector3* position = m_Transform->GetPosition();
+
+				// Up/Down
+				if (Input::Pressed(Input::Key::KEY_UP)) {
+					*position += Vector3::Up() * deltaPos;
+				}
+				if (Input::Pressed(Input::Key::KEY_DOWN)) {
+					*position += Vector3::Up() * -deltaPos;
+				}
+
+				// Left/Right
+				if (Input::Pressed(Input::Key::KEY_RIGHT)) {
+					*position += Vector3::Right() * deltaPos;
+				}
+				if (Input::Pressed(Input::Key::KEY_LEFT)) {
+					*position += Vector3::Right() * -deltaPos;
+				}
+			}
+
+			if (
 				Input::Pressed(Input::Key::KEY_W)
 				|| Input::Pressed(Input::Key::KEY_A)
 				|| Input::Pressed(Input::Key::KEY_S)
@@ -53,7 +79,9 @@ class CharacterController : public Component
 				if (Input::Pressed(Input::Key::KEY_A)) {
 					rotation->Rotate(Vector3::Up(), deltaRad);
 				}
-			} else if (Input::Pressed(Input::Key::MOUSE_ONE)) {
+			}
+
+			if (Input::Pressed(Input::Key::MOUSE_ONE)) {
 				Quaternion* rotation = m_Transform->GetRotation();
 				double mouseX = Input::GetAxis(Input::Axis::HORIZONTAL);
 				double mouseY = Input::GetAxis(Input::Axis::VERTICAL);
