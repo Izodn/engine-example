@@ -16,7 +16,7 @@ INCFLAGS="-I../engine/src"
 LINKFLAGS="-L../engine/bin -lengine"
 
 # Windows
-#INCFLAGS="-I../libraries -I../engine/src/inc"
+#INCFLAGS="-I../libraries -I../engine/src"
 #LINKFLAGS="-L../engine/bin -Wl,-Bdynamic -lengine -Wl,--as-needed"
 
 CFLAGS_DEFAULT="-std=c++14 $INCFLAGS"
