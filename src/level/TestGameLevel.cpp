@@ -1,5 +1,6 @@
 #include "TestGameLevel.hpp"
 #include "maths/Vector3.hpp"
+#include "component/CameraComponent.hpp"
 
 void TestGameLevel::Init()
 {
@@ -8,7 +9,13 @@ void TestGameLevel::Init()
 
 	// Presets
 	EventPreset eventPreset;
+	CameraPreset cameraPreset;
 	CharacterPreset characterPreset;
+
+	// Create camera
+	GameObject* cam = cameraPreset.CreateNew();
+	GetGame()->SetCameraComponent(cam->Components()->Get<CameraComponent>());
+	m_GameObjects.push_back(cam);
 
 	// Add object using preset
 	m_GameObjects.push_back(eventPreset.CreateNew());
